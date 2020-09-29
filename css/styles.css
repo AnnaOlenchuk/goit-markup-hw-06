@@ -402,8 +402,8 @@
 }
 
 .footer__button-container {
- position: absolute;
- top: 50%;
+  position: absolute;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -426,10 +426,6 @@
 }
 
 .footer__button-icon {
-  /* position: absolute;
-  top: 50%;
-  left: 80%;
-  transform: translate(-20%, -50%); */
   display: block;
   
   width: 24px;
@@ -458,7 +454,6 @@
   background-size: cover;
 }
 
-/* АХТУНГ! Разобраться, почему поломался шрифт */
 .hero__title {
   margin-top: 0;
   margin-bottom: 30px;
@@ -980,14 +975,12 @@ margin: 0 0 4px;
 }
 
 /* WHY THIS CRAP DOESN'T WORK??? */
-.modal__button-icon:hover,
-.modal__button-icon:focus {
+.modal__button-close:hover ~ .modal__button-icon,
+.modal__button-close:focus ~ .modal__button-icon,
+.modal__button-close:active ~ .modal__button-icon {
   fill: var(--accent-color);
 }
 /* Form */
-.form {
-
-}
 
 .modal__title {
   font-style: normal;
@@ -1039,23 +1032,36 @@ margin: 0 0 4px;
 .form__comment {
   border-radius: 4px;
   border: 1px solid var(--form-outline-color);
+
+  transition-property: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form__input {
   width: 100%;
-  padding: 14px;  
+  max-height: 40px;
+  padding: 14px 14px 14px 42px;  
 }
 
 .input__icon {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 6%;
+  transform: translate(-95%, -50%);
 
   width: 12px;
   height: 12px;
   /* background-color: tomato; */
+
+  transition-property: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.form__input:focus ~ .input__icon {
+ fill: var(--accent-color);
+}
+
+.form__input:focus {
+  border-color: var(--accent-color);
+}
 
 .form__input::placeholder {
   color: var(--form-outline-color);
