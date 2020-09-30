@@ -971,13 +971,14 @@ margin: 0 0 4px;
   width: 11px;
   height: 11px;
 
-  transition-property: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: black;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* КАКОГО ХРЕНА ЭТО ГОВНО НЕ РАБОТАЕТ????? */
-.modal__button-close:hover ~ .modal__button-icon,
-.modal__button-close:focus ~ .modal__button-icon,
-.modal__button-close:active ~ .modal__button-icon {
+.modal__button-close:hover .modal__button-icon,
+.modal__button-close:focus .modal__button-icon,
+.modal__button-close:active .modal__button-icon {
   fill: var(--accent-color);
 }
 /* Form */
@@ -1032,8 +1033,9 @@ margin: 0 0 4px;
 .form__comment {
   border-radius: 4px;
   border: 1px solid var(--form-outline-color);
+  outline: transparent;
 
-  transition-property: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form__input {
@@ -1048,10 +1050,10 @@ margin: 0 0 4px;
   left: 6%;
   transform: translate(-95%, -50%);
 
-  transition-property: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form__input:focus ~ .input__icon {
+.form__input:focus .input__icon {
  fill: var(--accent-color);
 }
 
