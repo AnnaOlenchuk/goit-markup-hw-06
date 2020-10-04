@@ -16,8 +16,8 @@
       <nav class="site-nav">
 
         <!-- Company logo -->
-        <a href="/" class="logo link">
-          <img src="./images/logo.svg" alt="logo" />
+        <a href="/" class="logo header__logo-link link">
+          <img src="./images/logo.svg" alt="logo" class="header__logo-img" />
           <!-- <span class="primary-logo">Web</span><span class="secondary-logo">Studio</span> -->
         </a>
         <!-- Menu items -->
@@ -31,19 +31,21 @@
       <!-- Contacts-->
       <ul class="contacts list">
         <li class="header__item">
+
           <a href="mailto:info@devstudio.com" class="contacts__link link">
+
             <svg class="contacts__icon">
               <use href="./images/svg-sprite.svg#envelope"></use>
             </svg>
-            info@devstudio.com
-          </a>
+            info@devstudio.com</a>
         </li>
         <li class="header__item">
           <a href="tel:+380961111111" class="contacts__link link">
             <svg class="contacts__icon">
-              <use href=./images/svg-sprite.svg#smartphone></use>
+              <use href="./images/svg-sprite.svg#smartphone"></use>
             </svg>
-            +38 096 111 11 11</a>
+            <span class="contacts__link-text">+38 096 111 11 11</span>
+          </a>
         </li>
       </ul>
     </div>
@@ -56,7 +58,7 @@
         Эффективные решения<br />
         для вашего бизнеса
       </h1>
-      <button data-modal-open="" <a href="" class="button">Заказать услугу</a>
+      <button data-modal-open="" class="button">Заказать услугу
       </button>
     </section>
 
@@ -387,17 +389,18 @@
       </div>
 
       <div class="footer__unit">
-        <form action="" class="footer__form">
-          <label for="mail" class="footer__title">Подпишитесь на рассылку </label>
+        <form action="#" class="footer__form">
+          <!-- <label for="mail" class="footer__title">Подпишитесь на рассылку </label> -->
+          <p class="footer__title">Подпишитесь на рассылку</p>
           <div class="footer__form-field">
-            <input type="mail" name="mail" id="mail" class="footer__form-input" placeholder="E-mail">
+            <input type="email" name="mail" id="mail" class="footer__form-input" placeholder="E-mail">
             <button type="submit" class="footer__button">
-              <div class="footer__button-container">
-                <p class="footer__button-text">Подписаться</p>
+              <span class="footer__button-container">
+                <span class="footer__button-text">Подписаться</span>
                 <svg class="footer__button-icon">
                   <use href="./images/svg-sprite.svg#send"></use>
                 </svg>
-              </div>
+              </span>
             </button>
           </div>
         </form>
@@ -416,7 +419,7 @@
 
       <p class="modal__title">Оставьте свои данные, мы вам перезвоним</p>
 
-      <form action="" class="form">
+      <form action="#" class="form">
         <div class="form__field">
           <label for="name" class="form__label">Имя</label>
           <div class="input__container">
@@ -440,7 +443,7 @@
         <div class="form__field">
           <label for="email" class="form__label">Почта</label>
           <div class="input__container">
-            <input type="mail" name="email" id="email" class="form__input">
+            <input type="email" name="email" id="email" class="form__input">
             <svg class="input__icon" style="width: 15px; height: 12px;">
               <use href="./images/svg-sprite.svg#mail-icon"></use>
             </svg>
@@ -449,18 +452,24 @@
 
         <div class="form__field form__field-comment">
           <label for="comment" class="form__label">Комментарий</label>
-          <textarea name="comment" id="comment" rows="5" placeholder="Введите текст" class="form__comment"></textarea>
+          <textarea name="comment" id="comment" rows="7" placeholder="Введите текст" class="form__comment"></textarea>
         </div>
 
         <div class="form__field form__field-policy">
 
-          <label for="policy" class="form__label form__label-policy">
+          <!-- <label for="policy" class="form__label form__label-policy">
             <input type="checkbox" name="policy" id="policy" class="form__field-checkbox">
             <span class="checkbox__icon">
             </span>
             Соглашаюсь с рассылкой и принимаю
             <a href="" class="form__link">Условия договора</a>
-          </label>
+          </label> -->
+
+          <input type="checkbox" name="policy" id="policy" class="form__field-checkbox">
+          <span class="checkbox__icon"></span>
+          <label for="policy" class="form__label form__label-policy">Соглашаюсь с рассылкой и принимаю</label>
+
+          <a href="" class="form__link"> Условия договора</a>
         </div>
 
         <div class="form__field form__field-button">

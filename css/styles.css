@@ -64,9 +64,8 @@
   margin-left: auto;
   margin-right: auto;
   width: 1200px;
-
-  /* outline: 2px solid tomato; */
 }
+
 .list {
   padding: 0;
   margin: 0;
@@ -78,6 +77,11 @@
 }
 
 /* Button */
+/* .button {
+  border-style: none;
+  padding: 0;
+} */
+
 .button {
   display: inline-block;
   border-radius: 4px;
@@ -140,8 +144,8 @@
 .header {
   padding-top: 25px;
   padding-bottom: 25px;
- 
 }
+
 /*  ACHTUNG!  */
 .secondary-header {
   border-bottom: 1px solid var(--border-color);
@@ -152,6 +156,16 @@
   justify-content: flex-end;
 
   align-items: center;  
+}
+
+.header__logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+
+.header__item {
+  display: flex;
 }
 
 .header__item:not(:last-child) {
@@ -207,6 +221,9 @@
 }
 
 .site-nav__link {
+  display: inline-flex;
+  align-items: center;
+
   color: var(--title-text-color);
 
   font-weight: 500;
@@ -229,6 +246,9 @@
 }
 
 .contacts__link {
+  display: inline-flex;
+  align-items: center;
+
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -252,10 +272,11 @@
 /* Увел. высоту ссылок, чтоб расшир. область ховера */
 .site-nav__link,
 .contacts__link {
+  display: inline-flex;
+  align-items: center;
+
   padding-top: 15px;
   padding-bottom: 15px;
-
-  display: block;
 
   transition-property: color;
   transition-duration: 250ms;
@@ -263,12 +284,13 @@
 }
 
 .contacts__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   width: 16px;
   height: 12px;
   margin-right: 10px;
-
-  align-items: center;
-  justify-content: center;
 
   fill: var(--primary-text-color);
 
@@ -278,8 +300,8 @@
 }
 
 /* ЗАПОМНИТЬ!!!! ХОВЕР ссылка + иконка*/
-.contacts__link:hover > .contacts__icon,
-.contacts__link:focus > .contacts__icon {
+.contacts__link:hover .contacts__icon,
+.contacts__link:focus .contacts__icon {
   fill: var(--accent-color);
 }
 
@@ -382,6 +404,7 @@
   border-radius: 4px;
 
   background-color: var(--footer-color);
+  color: var(--white-color);
 }
 
 .footer__button {
@@ -1005,6 +1028,8 @@ margin: 0 0 4px;
 }
 
 .form__field-policy {
+  position: relative;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -1014,6 +1039,7 @@ margin: 0 0 4px;
 
 .form__field-comment {
   margin-bottom: 20px;
+  height: 100%;
 }
 
 .form__field-button {
@@ -1080,9 +1106,24 @@ margin: 0 0 4px;
 
 .form__label-policy {
   position: relative;
+  margin-right: 5px;
+}
 
+.form__label-policy,
+.form__link {
+  display: block;
+  align-items: center;
+
+  margin-bottom: 4px;
   font-size: 14px;
   line-height: 1.71;
+}
+
+.form__link,
+.form__link:hover,
+.form__link:focus,
+.form__link:visited {
+  color: var(--accent-color);
 }
 
 .form__comment {
@@ -1093,7 +1134,7 @@ margin: 0 0 4px;
   line-height: 1.16;
   letter-spacing: 0.01em;
 
-  color: var(--form-outline-color);
+  
 }
 
 .form__field-checkbox {
@@ -1101,21 +1142,44 @@ margin: 0 0 4px;
   -moz-appearance: none;
   appearance: none;
 
-  position: absolute;
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translateY(-50%);
+
+  display: block;
+  align-items: center;
 }
 
-.checkbox__icon {
-  display: inline-block;
+.form__label-policy::before {
+  content: "";
+  position: absolute;
+  top:50%;
+  left: -9%;
+  transform: translateY(-50%);
 
+  display: inline-block;
+  align-items: center;
   width: 16px;
   height: 15px;
-  margin: 0;
-
-  border-radius: 2px;
-  border: solid var(--title-text-color) 1.8px;
+  margin: auto;
+  
+  background-image: url(../images/checkbox-square.svg);
 }
 
-.form__field-checkbox:checked +.checkbox__icon {
+.form__field-checkbox:checked ~ .form__label-policy::after {
+  content: "";
+  position: absolute;
+  top:50%;
+  left: -9%;
+  transform: translateY(-50%);
+
+  display: inline-block;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  margin: auto;
+  
   background-color: var(--accent-color);
   background-image: url(../images/checkbox-v.svg);
   background-size: contain;
@@ -1123,15 +1187,26 @@ margin: 0 0 4px;
   border-color: var(--accent-color); 
 }
 
-.form__link {
-  color: var(--accent-color);
+.checkbox__icon {
+  display: inline-block;
+
+  width: 16px;
+  height: 15px;
+  margin: auto;
+
+  /* border-radius: 2px;
+  border: solid var(--title-text-color) 1.8px; */
 }
 
-.form__link:hover,
-.form__link:focus,
-.form__link:visited {
-  color: var(--accent-color);
-}
+/* .form__field-checkbox:checked +.checkbox__icon {
+  background-color: var(--accent-color);
+  background-image: url(../images/checkbox-v.svg);
+  background-size: contain;
+  background-origin: border-box;
+  border-color: var(--accent-color); 
+} */
+
+
 
 .form__button {
   width: 200px;
