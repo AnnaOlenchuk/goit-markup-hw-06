@@ -1163,11 +1163,14 @@ margin: 0 0 4px;
   width: 16px;
   height: 15px;
   margin: auto;
+
+  border-radius: 2px;
+  border: solid var(--title-text-color) 1.8px;
   
-  background-image: url(../images/checkbox-square.svg);
+  /* background-image: url(../images/checkbox-square.svg); */
 }
 
-.form__field-checkbox:checked ~ .form__label-policy::after {
+.form__field-checkbox:checked ~ .form__label-policy::before {
   content: "";
   position: absolute;
   top:50%;
@@ -1193,20 +1196,7 @@ margin: 0 0 4px;
   width: 16px;
   height: 15px;
   margin: auto;
-
-  /* border-radius: 2px;
-  border: solid var(--title-text-color) 1.8px; */
 }
-
-/* .form__field-checkbox:checked +.checkbox__icon {
-  background-color: var(--accent-color);
-  background-image: url(../images/checkbox-v.svg);
-  background-size: contain;
-  background-origin: border-box;
-  border-color: var(--accent-color); 
-} */
-
-
 
 .form__button {
   width: 200px;
